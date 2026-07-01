@@ -1,0 +1,440 @@
+:root {
+  --color-background: #fff7ef;
+  --color-background-soft: #fffdf9;
+  --color-surface: #ffffff;
+  --color-text: #27213c;
+  --color-muted: #7d748c;
+  --color-border: #eadfd6;
+  --color-primary: #f26d5b;
+  --color-primary-dark: #d94f3e;
+  --color-teal: #3ab7a8;
+  --color-yellow: #ffd166;
+  --color-lavender: #a98de8;
+  --color-red: #df4f64;
+  --shadow-soft: 0 18px 45px rgba(89, 65, 54, 0.12);
+  --shadow-card: 0 12px 28px rgba(89, 65, 54, 0.09);
+  --radius-small: 8px;
+  --radius-medium: 14px;
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-text);
+  background:
+    linear-gradient(90deg, rgba(242, 109, 91, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(58, 183, 168, 0.08) 1px, transparent 1px),
+    var(--color-background);
+  background-size: 36px 36px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  width: min(100% - 32px, var(--max-width));
+  margin: 0 auto;
+  padding: 36px 0 48px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.app-kicker,
+.section-label {
+  margin: 0 0 6px;
+  color: var(--color-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.app-header h1,
+.toolbar h2,
+.panel-heading h2 {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.app-header h1 {
+  font-size: clamp(2.1rem, 5vw, 4.4rem);
+}
+
+.header-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 164px;
+  padding: 14px 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: var(--shadow-card);
+}
+
+.summary-number {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: var(--radius-small);
+  background: var(--color-yellow);
+  color: #49331a;
+  font-weight: 900;
+}
+
+.summary-label {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.note-panel,
+.notes-area {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 253, 249, 0.88);
+  box-shadow: var(--shadow-soft);
+}
+
+.note-panel {
+  position: sticky;
+  top: 24px;
+  padding: 22px;
+}
+
+.panel-heading,
+.toolbar,
+.note-card-header,
+.note-actions {
+  display: flex;
+  align-items: center;
+}
+
+.panel-heading,
+.toolbar,
+.note-card-header {
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.panel-badge,
+.pin-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.panel-badge {
+  background: rgba(169, 141, 232, 0.18);
+  color: #6542b1;
+}
+
+.pin-label {
+  background: rgba(255, 209, 102, 0.35);
+  color: #7f5713;
+}
+
+.note-form {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.note-form label {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.note-form input,
+.note-form textarea,
+.search-box input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  color: var(--color-text);
+  outline: none;
+}
+
+.note-form input,
+.search-box input {
+  min-height: 46px;
+  padding: 0 14px;
+}
+
+.note-form textarea {
+  min-height: 172px;
+  resize: vertical;
+  padding: 14px;
+  line-height: 1.55;
+}
+
+.note-form input::placeholder,
+.note-form textarea::placeholder,
+.search-box input::placeholder {
+  color: #aaa1b2;
+}
+
+.primary-button {
+  min-height: 48px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 900;
+  box-shadow: 0 12px 22px rgba(242, 109, 91, 0.24);
+}
+
+.form-message {
+  min-height: 20px;
+  margin: 0;
+  color: var(--color-red);
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.empty-state.is-hidden {
+  display: none;
+}
+
+.empty-state {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px dashed rgba(169, 141, 232, 0.7);
+  border-radius: var(--radius-medium);
+  background: linear-gradient(135deg, rgba(169, 141, 232, 0.11), rgba(58, 183, 168, 0.1));
+  text-align: center;
+}
+
+.empty-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  margin: 0 auto 12px;
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.empty-icon span {
+  width: 25px;
+  height: 31px;
+  border: 2px solid var(--color-lavender);
+  border-radius: 5px;
+  background: linear-gradient(var(--color-yellow) 0 5px, transparent 5px);
+}
+
+.empty-state h3,
+.empty-state p,
+.note-card h3,
+.note-card p {
+  margin: 0;
+}
+
+.empty-state h3 {
+  font-size: 1rem;
+}
+
+.empty-state p {
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.notes-area {
+  padding: 22px;
+}
+
+.toolbar {
+  margin-bottom: 18px;
+}
+
+.toolbar h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.search-box {
+  display: grid;
+  gap: 7px;
+  width: min(100%, 280px);
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.note-card {
+  display: flex;
+  min-height: 218px;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.note-card.is-pinned {
+  border-color: rgba(255, 209, 102, 0.8);
+}
+
+.note-card.is-hidden {
+  display: none;
+}
+
+.note-card::before {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 5px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: var(--color-primary);
+}
+
+.note-card-teal::before {
+  background: var(--color-teal);
+}
+
+.note-card-lavender::before {
+  background: var(--color-lavender);
+}
+
+.note-card-yellow::before {
+  background: var(--color-yellow);
+}
+
+.note-date {
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.note-card h3 {
+  margin-top: 16px;
+  font-size: 1.15rem;
+}
+
+.note-card p {
+  margin-top: 10px;
+  color: var(--color-muted);
+  line-height: 1.58;
+}
+
+.note-actions {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.note-actions button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(58, 183, 168, 0.35);
+  border-radius: var(--radius-small);
+  background: rgba(58, 183, 168, 0.1);
+  color: #23796f;
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.note-actions .delete-button {
+  border-color: rgba(223, 79, 100, 0.32);
+  background: rgba(223, 79, 100, 0.08);
+  color: var(--color-red);
+}
+
+.note-actions .pin-button {
+  border-color: rgba(255, 209, 102, 0.58);
+  background: rgba(255, 209, 102, 0.18);
+  color: #7f5713;
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    width: min(100% - 24px, var(--max-width));
+    padding-top: 24px;
+  }
+
+  .app-header,
+  .workspace,
+  .toolbar {
+    display: grid;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .note-panel {
+    position: static;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-header {
+    gap: 16px;
+  }
+
+  .header-summary {
+    width: 100%;
+  }
+
+  .note-panel,
+  .notes-area {
+    padding: 16px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note-card {
+    min-height: 0;
+  }
+}

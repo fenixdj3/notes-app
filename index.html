@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="app-kicker">Creative notes board</p>
+        <h1>Notes App</h1>
+      </div>
+      <div class="header-summary" aria-label="Notes summary">
+        <span class="summary-number">6</span>
+        <span class="summary-label">notes saved</span>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="note-panel" aria-label="Create a new note">
+        <div class="panel-heading">
+          <h2>Create Note</h2>
+          <span class="panel-badge">Draft</span>
+        </div>
+
+        <form class="note-form">
+          <label for="note-title">Title</label>
+          <input id="note-title" type="text" placeholder="Weekend ideas">
+
+          <label for="note-text">Note</label>
+          <textarea id="note-text" rows="8" placeholder="Write a note..."></textarea>
+
+          <button class="primary-button" type="submit">Add Note</button>
+          <p class="form-message" id="form-message" aria-live="polite"></p>
+        </form>
+
+        <div class="empty-state">
+          <div class="empty-icon" aria-hidden="true">
+            <span></span>
+          </div>
+          <h3>No notes yet</h3>
+          <p>Add your first note to get started.</p>
+        </div>
+      </aside>
+
+      <section class="notes-area" aria-label="Notes list">
+        <div class="toolbar">
+          <div>
+            <p class="section-label">Your collection</p>
+            <h2>Recent Notes</h2>
+          </div>
+          <label class="search-box" for="note-search">
+            <span aria-hidden="true">Search</span>
+            <input id="note-search" type="search" placeholder="Search notes">
+          </label>
+        </div>
+
+        <div class="notes-grid">
+          <article class="note-card note-card-coral is-pinned">
+            <div class="note-card-header">
+              <span class="note-date">Updated Jun 30, 2026</span>
+              <span class="pin-label">Pinned</span>
+            </div>
+            <h3 class="note-title">Portfolio checklist</h3>
+            <p class="note-text">Finish the notes app mockup, keep the layout responsive, and polish the card spacing.</p>
+            <div class="note-actions" aria-label="Note actions">
+              <button class="edit-button" type="button">Edit</button>
+              <button class="pin-button" type="button">Unpin</button>
+              <button class="delete-button" type="button">Delete</button>
+            </div>
+          </article>
+
+          <article class="note-card note-card-teal">
+            <div class="note-card-header">
+              <span class="note-date">Created Jun 29, 2026</span>
+            </div>
+            <h3 class="note-title">Daily focus</h3>
+            <p class="note-text">Build one small feature, review the CSS, and keep the project simple enough to explain.</p>
+            <div class="note-actions" aria-label="Note actions">
+              <button class="edit-button" type="button">Edit</button>
+              <button class="pin-button" type="button">Pin</button>
+              <button class="delete-button" type="button">Delete</button>
+            </div>
+          </article>
+
+          <article class="note-card note-card-lavender">
+            <div class="note-card-header">
+              <span class="note-date">Created Jun 28, 2026</span>
+            </div>
+            <h3 class="note-title">Design ideas</h3>
+            <p class="note-text">Try soft colors, clear buttons, friendly empty states, and a layout that works on phones.</p>
+            <div class="note-actions" aria-label="Note actions">
+              <button class="edit-button" type="button">Edit</button>
+              <button class="pin-button" type="button">Pin</button>
+              <button class="delete-button" type="button">Delete</button>
+            </div>
+          </article>
+
+          <article class="note-card note-card-yellow">
+            <div class="note-card-header">
+              <span class="note-date">Updated Jun 27, 2026</span>
+            </div>
+            <h3 class="note-title">JavaScript plan</h3>
+            <p class="note-text">Later: add note creation, search filtering, edit mode, delete confirmation, and pin sorting.</p>
+            <div class="note-actions" aria-label="Note actions">
+              <button class="edit-button" type="button">Edit</button>
+              <button class="pin-button" type="button">Pin</button>
+              <button class="delete-button" type="button">Delete</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
